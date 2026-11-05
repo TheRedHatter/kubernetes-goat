@@ -20,7 +20,7 @@ COPY home .
 RUN git clone https://github.com/madhuakula/toc-page-hugo-theme.git themes/toc-page \
     && /usr/bin/hugo
 
-FROM nginx:alpine
+FROM nginx:1.31.8-alpine3.24
 LABEL MAINTAINER="Madhu Akula" INFO="Kubernetes Goat"
 
 COPY --from=build /build/public /usr/share/nginx/html
